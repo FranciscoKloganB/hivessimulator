@@ -4,13 +4,10 @@ Hives is a simulation framework for Python language that favors quick algorithm 
 
 This project is far from being time-efficient and supports at most 10^4 network nodes. However, it is very easy to configure, modify, and extend using inheritance and polymorphism features of the Python language. We bundle several classes representing Network Nodes, Master Servers, and Cluster Groups to the users' satisfaction. We believe that data and science should come before programming when it comes to research, hence our focus on usability rather than pure performance.
 
-The project source code and documentation follow the conventions enumerated in Google Styles Available at:
-| https://google.github.io/styleguide/pyguide.html
-
-And our documentation website, including a quick-start guide, is available at:
-| https://www.hivessimulator.tech/
+The project source code and documentation follow the conventions enumerated in [Google Styles Available](https://google.github.io/styleguide/pyguide.html)
+And our [documentation website](https://www.hivessimulator.tech), including a quick-start guide.
 
 ### Credits: 
 * Author and Developer: Francisco Teixeira de Barros
-* Coordinator: Carlos Silvestre
-* Co-Coordinatior: Daniel Silvestre
+* Project Coordinator: Carlos Silvestre
+* Project Co-Coordinatior: Daniel Silvestre
