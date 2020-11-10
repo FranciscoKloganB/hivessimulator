@@ -71,3 +71,4 @@ test.py
 
 # ignore sphinx latex files
 latex/
+docs/
