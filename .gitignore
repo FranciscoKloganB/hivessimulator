@@ -365,3 +365,4 @@ hive/docs/make_docs.py
 
 # Octave session info
 octave-workspace
+hive/.firebaserc
