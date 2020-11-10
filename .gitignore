@@ -1,11 +1,3 @@
-# Project
-#######################################
-
-*/simfiles
-*/outfiles
-*.json
-*.out
-
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -353,9 +345,6 @@ codegen/
 # Simulink autosave extension
 *.autosave
 
-# Simulink cache files
-
-
 # Hives: Simulator Files
 convex_optimization_mh.py
 metropolis_hastings_unit_test.py
@@ -363,15 +352,16 @@ hive/app/static/outfiles/FTB_4376.out
 hive/app/static/outfiles/powerglove.out
 hive/app/sample_scenario_fixer.py
 hive/docs/make_docs.py
-
-*.slxc
-
-# Octave session info
-octave-workspace
-
-# Image formats
+*/simfiles
+*/outfiles
+*.json
+*.out
 *.png
 *.pdf
 *.svg
 *.jpg
 *.jpeg
+*.slxc
+
+# Octave session info
+octave-workspace
