@@ -1,6 +1,6 @@
 alabaster==0.7.12
 astor==0.8.1
-astroid==2.4.2
+astroid
 Babel==2.8.0
 backcall==0.2.0
 beautifulsoup4==4.9.3
@@ -37,7 +37,6 @@ kiwisolver==1.2.0
 lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 matlab-kernel==0.16.9
-matlabengineforpython===R2020a
 matplotlib==3.2.1
 mccabe==0.6.1
 metakernel==0.24.4
