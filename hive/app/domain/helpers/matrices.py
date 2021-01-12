@@ -161,6 +161,9 @@ def new_mgo_transition_matrix(
         respective mixing rate.
     """
     matlab_container = MatlabEngineContainer.get_instance()
+    if matlab_container is None:
+        return None, float('inf')
+
     try:
         result = matlab_container.matrix_global_opt(a, v_)
         if result:
