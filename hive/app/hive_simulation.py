@@ -75,9 +75,8 @@ def __load_scenarios__():
         scenarios_file.close()
     except OSError:
         warn(f"Could not load scenarios.json from {es.RESOURCES_ROOT}.\n"
-             " > if you need sample scenarios for swarm guidance in your code, "
-             "please refer to sample_scenario_generator.py, "
-             "otherwise, ignore this warning.")
+             " > if you need sample scenarios please refer to "
+             "sample_scenario_generator.py, otherwise, ignore this message.")
     return scenarios
 
 
