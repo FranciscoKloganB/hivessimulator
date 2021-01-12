@@ -36,9 +36,7 @@ jupyter-core==4.6.3
 kiwisolver==1.2.0
 lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
-matlab==0.1
 matlab-kernel==0.16.9
-matlabengineforpython===R2020a
 matplotlib==3.2.1
 mccabe==0.6.1
 metakernel==0.24.4
