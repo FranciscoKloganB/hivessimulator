@@ -48,8 +48,13 @@ class MatlabEngineContainer:
 
         Returns:
             A reference to the existing ``MatlabEngineContainer``
-            :py:const:`instance <_instance>`.
+            :py:const:`instance <_instance>` or None if matlab python engine
+            is not properly installed.
         """
+        if not __engine_available__:
+            print("matlab.engine module is not installed.")
+            return None
+
         if MatlabEngineContainer._instance is None:
             with MatlabEngineContainer._LOCK:
                 if MatlabEngineContainer._instance is None:
@@ -63,18 +68,14 @@ class MatlabEngineContainer:
             Do not directly invoke constructor, use :py:meth:`get_instance`
             instead.
         """
+        print("Trying to load matlab.engine... this can take a while.")
         if MatlabEngineContainer._instance is None:
-            MatlabEngineContainer._instance = self
-            if not __engine_available__:
-                print("matlab.engine module is not installed.")
-                self.eng = None
-            else:
-                print("loading matlab.engine... this can take a while.")
-                try:
-                    self.eng = matlab.engine.start_matlab()
-                    self.eng.cd(MATLAB_DIR)
-                except matlab.engine.EngineError:
-                    self.eng = None
+            try:
+                self.eng = matlab.engine.start_matlab()
+                self.eng.cd(MATLAB_DIR)
+                MatlabEngineContainer._instance = self
+            except matlab.engine.EngineError:
+                print("Unexpected error occured. Do you have a valid matlab license?")
         else:
             raise RuntimeError("MatlabEngineContainer is a Singleton. Use "
                                "MatlabEngineContainer.getInstance() to get a "
