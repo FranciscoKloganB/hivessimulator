@@ -32,7 +32,6 @@ from typing import List, Any, OrderedDict, Tuple
 
 import numpy as np
 from cvxpy.error import SolverError, DCPError
-from matlab.engine import EngineError
 
 import domain.helpers.matrices as mm
 from domain.helpers.matlab_utils import MatlabEngineContainer
@@ -51,7 +50,10 @@ def main():
     """
     os.makedirs(MIXING_RATE_SAMPLE_ROOT, exist_ok=True)
 
-    MatlabEngineContainer.get_instance()
+    matlab_engine = MatlabEngineContainer.get_instance()
+    if not matlab_engine:
+        sys.exit("MatlabEngineContainer not available. "
+                 "Do you have matlab packages installed?")
 
     results: _ResultsDict = collections.OrderedDict()
 
