@@ -4,6 +4,8 @@ from __future__ import annotations
 import threading
 import numpy as np
 from typing import Any
+
+from domain.helpers.exceptions import MatlabEngineContainerError
 from environment_settings import MATLAB_DIR
 
 __engine_available__ = True
@@ -110,6 +112,9 @@ class MatlabEngineContainer:
             return None
 
         with MatlabEngineContainer._LOCK:
-            ma = matlab.double(a.tolist())
-            mv_ = matlab.double(v_.tolist())
-            return self.eng.matrixGlobalOpt(ma, mv_, nargout=1)
+            try:
+                ma = matlab.double(a.tolist())
+                mv_ = matlab.double(v_.tolist())
+                return self.eng.matrixGlobalOpt(ma, mv_, nargout=1)
+            except (matlab.engine.EngineError, AttributeError) as exc:
+                raise MatlabEngineContainerError("") from exc
